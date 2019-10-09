@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>表單</title>
+    <script>
+        function getElement(name) {
+            return document.getElementById(name);
+        }
+
+        function button_Submit() {
+            var isChecked = getElement('checkcheck').checked;
+            if (isChecked) return true;
+            alert('必須勾選同意');
+            return false;
+        }
+
+        Window.onload = function () {
+            getElement(form1).onsubmit = function () {
+                return button_Submit();
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <form id="form1" 
+        action=" http://isbaas.azurewebsites.net/WebForms/Form2Mail.aspx?mailto=@a0983221438@gmail.com&redirect=http://www.google.com"
+        method="POST">
+        <fieldset>
+            <legend>個人資料--必填</legend>
+            <div>
+                <label>姓名:</label>
+                <input type="text" placeholder="請輸入姓名 " value="" id="fieldName" name="fieldName">
+            </div><br />
+            <div>
+                <label>密碼:</label>
+                <input type="password" id="fieldPwd" name="fieldPwd">
+            </div>
+            <br />
+            <div>
+                <label>性別:</label>
+                <input type="radio" id="gender" name="gender" value="男生">男生
+                <input type="radio" id="gender" name="gender" value="女生">女生
+            </div>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>個人資料--興趣</legend>
+            <label>興趣:</label>
+            <div>
+                <input type="checkbox" id="hobby" name="hobby" value="音樂">音樂
+                <input type="checkbox" id="hobby" name="hobby" value="運動">運動
+                <input type="checkbox" id="hobby" name="hobby" value="閱讀">閱讀
+                <input type="checkbox" id="hobby" name="hobby" value="電影">電影
+            </div>
+            <div>
+                <label>專長:</label>
+                <textarea id="fieldMultiLineText" cols="40" rows="5"></textarea>
+            </div>
+        </fieldset><br />
+        <fieldset>
+            <legend>個人資料--地址</legend>
+            <div>
+                <label>郵遞區號:</label>
+                <input type="text" value=" " id="Number" name="Number">
+            </div>
+            <div>
+                <label>縣市:</label>
+                <select name="台北">
+                    <option value="1" selected>台北</option>
+                    <option value="2">桃園</option>
+                    <option value="3">新竹</option>
+                    <option value="4">苗栗</option>
+                    <option value="5">台中</option>
+                    <option value="6">彰化</option>
+                </select>
+            </div>
+            <label>其他地址:</label>
+            <input type="text" value="" id="ADD" name="ADD">
+            </div>
+        </fieldset>
+        <br />
+        <input type="checkbox" id="checkcheck" name="checkcheck">同意使用
+        <br />
+        <input type="reset"  value="重新填寫" />
+        <button type="submit" >送件</button>
+    </form>
+</body>
+
+</html>

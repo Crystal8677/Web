@@ -1,0 +1,14 @@
+@media screen and (max-width:560px){
+    #ad-carousel h1{
+        font-size: 2rem;
+    }
+    #ad-carousel .btn{
+        margin-top: 0 !important;
+    }
+}
+
+.news-list > li::before{
+    content:"・";
+    color: white;
+}
+

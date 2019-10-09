@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>身高體重</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+        function init() {
+            $('#Button1').click(function (e) {
+                var textHeight = $('#textHeight').val();
+                var textWeight = $('#textWeight').val();
+                textHeight = textHeight / 100;
+                var BMI = textWeight / (textHeight * textHeight);
+                $('#result').html(BMI);
+            });
+
+            $('#CheckAll').click(
+                function () {
+                    var check = $('#CheckAll').prop("checked");
+                    $('#CheckBoxGroup input').prop("checked", check);
+                });
+
+            $('#sel01').change(
+                function () {
+                    var val = $(this).val();
+                    $("#ImgGroup2 img").removeClass();
+                    $("#ImgGroup2 img").addClass(val);
+                });
+
+            $('img').hover(
+                function () {
+                    // over
+                    //改變滑鼠指標
+                    $(this).css('cursor', 'pointer');
+                    //前面是設圖片放的大小，後面是設滑鼠移過去之後多久之後放大
+                    $(this).css("transform", "scale(1.1)").css("transform-duration", "0.1s");
+                },
+                function () {
+                    // out
+                    $(this).css("transform", "scale(1)").css("transform-duration", "0.1s");
+                }
+            );
+        }
+
+        $(function () {
+            //初始化
+            init();
+        });
+
+    </script>
+
+    <style>
+        .br15 {
+            border-radius: 15px;
+        }
+
+        .br30 {
+            border-radius: 30px;
+        }
+
+        .br50 {
+            border-radius: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="row" style="margin:10px">
+        <div class="col-6">
+            <h1>BMI計算(改成jQuery版本)</h1>
+            <label>身高:</label>
+            <input class="form-control" id="textHeight" value="" />
+            <label>體重:</label>
+            <input class="form-control" id="textWeight" value="" />
+            <br />
+            <button class="btn btn-primary" id="Button1">計算</button>
+            <br />
+            <span id="result"></span>
+        </div>
+    </div>
+    <hr />
+    <div class="row" style="margin:10px">
+        <div class="col-12">
+            <input id="CheckAll" type="checkbox" />勾選全部
+            <div id="CheckBoxGroup">
+                <input type="checkbox" />項目1
+                <input type="checkbox" />項目2
+                <input type="checkbox" />項目3
+                <input type="checkbox" />項目4
+                <input type="checkbox" />項目5
+                <input type="checkbox" />項目6
+                <input type="checkbox" />項目7
+                <input type="checkbox" />項目8
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <div id="ImgGroup2" class="row" style="margin:10px; padding-top:100px">
+        <div class="col-12">
+            <select id="sel01">
+                <option value="br15">15px</option>
+                <option value="br30">30px</option>
+                <option value="br50">50px</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <img src="Images/1.jpg" style="width:100%" class="img-responsive" />
+        </div>
+        <div class="col-4">
+            <img src="Images/2.jpg" style="width:100%" class="img-responsive" />
+        </div>
+        <div class="col-4">
+            <img src="Images/3.jpg" style="width:100%" class="img-responsive" />
+        </div>
+    </div>
+
+</body>
+
+</html>

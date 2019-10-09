@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>註冊頁面</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">個人資料</div>
+                    <div class="card-body">
+                        <label>帳號:</label>
+                        <input type="text" class="form-control" placeholder="請輸入帳號 " value="" id="fieldName"
+                            name="fieldName">
+                        <label>密碼:</label>
+                        <input type="password" class="form-control" placeholder="請輸入密碼 " id="fieldPwd" name="fieldPwd">
+                        <label>確認密碼:</label>
+                        <input type="password" class="form-control" placeholder="請輸入密碼 " id="fieldPwd" name="fieldPwd">
+                        <label>E-mail:</label>
+                        <input type="email" class="form-control" placeholder="請輸入E-mail " id="email" name="email">
+                        <label>生日:</label>
+                        <input type="birthday" class="form-control" id="fieldBTH" name="fieldBTH">
+                        <label>學校/公司:</label>
+                        <input type="School" class="form-control" id="fieldSCH" name="fieldSCH">
+                    </div>
+                </div>
+                <input type="checkbox" id="checkcheck" name="checkcheck">勾選我同意本系統使用條款<br/>
+                <button type="submit" class="btn btn-primary">註冊</button>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
